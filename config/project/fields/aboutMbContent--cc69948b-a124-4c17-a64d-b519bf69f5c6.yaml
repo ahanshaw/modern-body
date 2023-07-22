@@ -1,0 +1,27 @@
+columnSuffix: tzsyqevb
+contentColumnType: text
+fieldGroup: 24552ad8-1522-4671-bd6f-aefad369b0ef # About MB
+handle: aboutMbContent
+instructions: null
+name: Content
+searchable: false
+settings:
+  availableTransforms: ''
+  availableVolumes: ''
+  columnType: text
+  configSelectionMode: choose
+  defaultTransform: ''
+  manualConfig: ''
+  purifierConfig: null
+  purifyHtml: true
+  redactorConfig: Custom.json
+  removeEmptyTags: false
+  removeInlineStyles: false
+  removeNbsp: false
+  showHtmlButtonForNonAdmins: false
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  uiMode: enlarged
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field

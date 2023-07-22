@@ -1,6 +1,7 @@
 // colors 
 $black: #222;
 $white: #ffffff;
+$beige: #fbfbfb;
 $accent: #8a3a42;
 
 // fonts
@@ -26,11 +27,12 @@ $space: .25rem;
 // misc 
 $header-height: 65px;
 $radius: .25rem;
+$radius-large: .5rem;
 $max-line-length: 50rem;
 
 // breakpoints
 $breakpoints: (
-	mobile:  ( max-width:  767px ),
+	mobile:  ( max-width: 600px ),
 	tablet: ( max-width:  992px ),
 	laptop: ( max-width:  1024px ),
 	wide:  ( min-width: 1401px )
@@ -38,7 +40,7 @@ $breakpoints: (
 
 // containers 
 $narrow: 40rem;
-$medium: 60rem;
+$medium: 65rem;
 $wide: 82rem;
 
 // stack 

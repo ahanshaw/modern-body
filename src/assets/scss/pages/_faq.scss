@@ -1,0 +1,21 @@
+.faq {
+    
+    &-head {
+        @include container($narrow);
+        text-align: center;
+    }
+
+    &-container {
+        @include container($narrow);
+    }
+
+    &-question {
+        @include button-reset;
+        @include font-medium;
+        text-align: left;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

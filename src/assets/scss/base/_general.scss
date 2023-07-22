@@ -17,8 +17,18 @@ body {
 	line-height: 1.8;
 	color: $black;
 	background-color: $white;
+	//background: linear-gradient(0deg, $beige 0%, $white 100%);
 	margin: 0;
 	padding: 0;
+
+	&.fixed {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		overflow: hidden;
+	}
 }
 
 section {
@@ -33,10 +43,20 @@ section {
 	}
 }
 
+*:last-child {
+	margin-bottom: 0;
+}
+
+p + h2,
+p + .h2-style {
+	margin-top: $gap-md;
+}
+
 h1, .h1-style {
 	@include font-logo;
 	@include toRem('font-size', 44);
 	line-height: 1.2;
+	margin-bottom: $gap-sm;
 
 	@include break(tablet) {
 		@include toRem('font-size', 40);
@@ -49,11 +69,11 @@ h1, .h1-style {
 
 h2, .h2-style {
 	@include font-logo;
-	@include toRem('font-size', 32);
+	@include toRem('font-size', 28);
 	line-height: 1.2;
 
 	@include break(tablet) {
-		@include toRem('font-size', 28);
+		@include toRem('font-size', 26);
 	}
 
 	@include break(mobile) {
@@ -63,7 +83,7 @@ h2, .h2-style {
 
 h3, .h3-style {
 	@include font-medium;
-	@include toRem('font-size', 24);
+	@include toRem('font-size', 22);
 	line-height: 1.2;
 
 	@include break(mobile) {
@@ -71,30 +91,86 @@ h3, .h3-style {
 	}
 }
 
-ul {
+h4, .h4-style {
+	@include font-medium;
+	@include toRem('font-size', 18);
+	line-height: 1.2;
+}
+
+.p-style {
+	@include font-reg;
+	@include toRem('font-size', 16);
+	line-height: 1.8;
+}
+
+.p-small {
+	@include font-reg;
+	@include toRem('font-size', 14);
+	line-height: 1.8;
+}
+
+small {
+	@include toRem('font-size', 12);
+}
+
+a, button {
+	&:focus-visible {
+		outline: 1px solid $accent;
+		outline-offset: 2px;
+	}
+}
+
+a {
+	color: $accent;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+ul,
+ol {
 	padding-left: $gap-sm;
 }
 
-strong {
+strong,
+.bold {
 	@include font-medium;
+}
+
+.desktop {
+	display: block;
+
+	@include break(mobile) {
+		display: none;
+	}
+}
+
+.mobile {
+	display: none;
+
+	@include break(mobile) {
+		display: block;
+	}
 }
 
 .large-font {
 	@include toRem('font-size', 18);
-
-	@include break(tablet) {
-		@include toRem('font-size', 17);
-	}
 }
 
-.emphasis {
-	@include font-medium;
-	@include toRem('font-size', 22);
-	line-height: 1.6;
+.emphasis:nth-child(n) {
+	@include font-logo;
+	@include toRem('font-size', 24);
+	line-height: 1.8;
 	color: $accent;
-	padding: $gap 0; 
+	margin: $gap 0;
 
 	@include break(tablet) {
+		@include toRem('font-size', 22);
+	}
+
+	@include break(mobile) {
 		@include toRem('font-size', 20);
 	}
 }

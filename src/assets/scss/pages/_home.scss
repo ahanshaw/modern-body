@@ -9,14 +9,14 @@
 		}
 
 		&.in-view {
-			.hero-video {
+			.home-hero-video {
 				opacity: .15;
 			}			
 		}
 
 		&.no-autoplay {
 
-			.hero-video {
+			.home-hero-video {
 				opacity: .15;
 				transition: opacity 0;
 			}
@@ -38,7 +38,7 @@
 			}
 
 			@include break(mobile) {
-				padding: 10vh 0 5vh 0 ;
+				padding: 10vh 0 15vh 0;
 			}
 		}
 
@@ -129,7 +129,7 @@
 			width: 100vw;
 			height: 100vh;
 			@include object-fit;
-			opacity: .65;
+			opacity: .5;
 			transition: opacity 7.75s ease 4.25s;
 
 			video {
@@ -165,18 +165,21 @@
 			z-index: 2;
 
 			@include break(mobile) {
-				display: block;
-				height: auto;
+				flex-direction: column;
+				align-items: stretch;
+				gap: $gap;
+				height: unset;
 			}
 		}		
 
 		&-image {
 			flex: 1;
 			height: 100%;
+			border-radius: $radius-large;
 			overflow: hidden;
 
 			@include break(mobile) {
-				height: 300px;
+				order: 2;
 			}
 
 			img {
@@ -200,7 +203,7 @@
 			transition: opacity .3s ease, transform .6s ease;
 
 			@include break(mobile) {
-				//transform: translateY(2rem);
+				order: 1;
 			}
 		}
 
@@ -240,7 +243,6 @@
 		position: relative;
 
 		&-intro {
-			@include toRem('font-size', 24);
 			opacity: 0;
 			transform: translateY($gap-lg);
 			transition: opacity .6s ease, transform .9s ease;
@@ -253,6 +255,10 @@
 			&.in-view {
 				opacity: 1;
 				transform: translateY(0);
+			}
+
+			p {
+				@include toRem('font-size', 24);
 			}
 		}
 
@@ -504,6 +510,7 @@
 			position: relative;
 			flex: 1;
 			height: auto;
+			border-radius: $radius-large;
 			overflow: hidden;
 
 			@include break(mobile) {

@@ -1,0 +1,63 @@
+{% extends "_layout" %}
+{% block content %}
+<main class="about">
+    <div class="layout-container about-container">
+        <div class="layout-side about-side stack-reg">
+            {% set sidebarImage = entry.aboutMbSidebarImage.one() %}
+            {% if sidebarImage %}
+            <div class="about-image animate animate-image">
+                <img src="{{ sidebarImage.url('block') }}" width="{{ sidebarImage.getWidth('block') }}"
+                    height="{{ sidebarImage.getHeight('block') }}" alt="{{ sidebarImage.alt }}" />
+            </div>
+            {% endif %}
+            <div class="about-credentials-list stack-sm desktop">
+                <h2 class="h3-style">{{ entry.aboutMbSidebarHead }}</h2>
+                <div class="stack-sm" data-panel-group>
+                    {% set blocks = entry.aboutMbSidebarAccordion.all() %}
+                    {% if blocks | length %}
+                    {% for block in blocks %}
+                    <div class="about-panel" data-panel>
+                        <button class="large-font bold about-trigger" data-panel-trigger aria-expanded="false">
+                            {{ block.accordionHead }}
+                        </button>
+                        <div class="panel-target about-target rich-text" style="visibility: hidden" data-panel-target data-height>
+                            {{ block.accordionCopy | striptags }}
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+            {% set sidebarImage2 = entry.aboutMbSecondSidebarImage.one() %}
+            {% if sidebarImage2 %}
+            <div class="about-image animate animate-image">
+                <img src="{{ sidebarImage2.url('block') }}" width="{{ sidebarImage2.getWidth('block') }}"
+                    height="{{ sidebarImage2.getHeight('block') }}" alt="{{ sidebarImage2.alt }}" />
+            </div>
+            {% endif %}
+        </div>
+        <div class="layout-main about-main rich-text">
+            <h1>{{ entry.title }}</h1>
+            {{ entry.aboutMbContent }}
+            <div class="about-credentials-list stack-reg mobile">
+                <h2 class="h3-style">{{ entry.aboutMbSidebarHead }}</h2>
+                <div class="stack-sm" data-panel-group>
+                    {% set blocks = entry.aboutMbSidebarAccordion.all() %}
+                    {% if blocks | length %}
+                    {% for block in blocks %}
+                    <div class="about-panel" data-panel>
+                        <button class="large-font bold about-trigger" data-panel-trigger aria-expanded="false">
+                            {{ block.accordionHead }}
+                        </button>
+                        <div class="panel-target about-target rich-text" data-panel-target data-height>
+                            {{ block.accordionCopy | striptags }}
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

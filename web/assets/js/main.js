@@ -1,11 +1,53 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/assets/js/main.js":
 /*!*******************************!*\
   !*** ./src/assets/js/main.js ***!
   \*******************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _modules_getHeight__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/getHeight */ "./src/assets/js/modules/getHeight.js");
+/* harmony import */ var _modules_panels__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/panels */ "./src/assets/js/modules/panels.js");
+//panels
+
+
+window.onload = function () {
+  (0,_modules_getHeight__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  (0,_modules_panels__WEBPACK_IMPORTED_MODULE_1__["default"])();
+};
+var timer;
+window.onresize = function () {
+  clearTimeout(timer);
+  timer = setTimeout(_modules_panels__WEBPACK_IMPORTED_MODULE_1__["default"], 50);
+};
+
+// mobile nav
+var pageBody = document.querySelector('body');
+var mobileNavBtn = document.querySelector('[data-mobile-nav-btn]');
+var mobileNav = document.querySelector('[data-mobile-nav]');
+mobileNavBtn.addEventListener('click', function (event) {
+  event.preventDefault();
+  var opened = mobileNavBtn.getAttribute('aria-pressed');
+  if (opened === 'false') {
+    mobileNavBtn.setAttribute('aria-pressed', 'true');
+    mobileNavBtn.innerHTML = 'Close';
+    mobileNav.classList.add('opened');
+    setTimeout(function () {
+      pageBody.classList.add('fixed');
+    }, 301);
+  } else {
+    mobileNavBtn.innerHTML = 'Menu';
+    pageBody.classList.remove('fixed');
+    mobileNavBtn.setAttribute('aria-pressed', 'false');
+    mobileNav.classList.remove('opened');
+  }
+});
+
+// set copyright year
+document.getElementById("copyright-year").innerHTML = new Date().getFullYear();
 
 // general animation
 var animateItem = function animateItem(entries, observer) {
@@ -27,13 +69,106 @@ animateItems.forEach(function (item) {
 
 /***/ }),
 
+/***/ "./src/assets/js/modules/getHeight.js":
+/*!********************************************!*\
+  !*** ./src/assets/js/modules/getHeight.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var getHeight = function getHeight() {
+  var els = document.querySelectorAll('[data-height]');
+  var heightArr = [];
+  if (els) {
+    heightArr = Array.from(els);
+    heightArr.forEach(function (el) {
+      var height = el.offsetHeight;
+      el.setAttribute('data-height', height);
+    });
+  }
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getHeight);
+
+/***/ }),
+
+/***/ "./src/assets/js/modules/panels.js":
+/*!*****************************************!*\
+  !*** ./src/assets/js/modules/panels.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var panels = function panels() {
+  var panelGroups = document.querySelectorAll('[data-panel-group]');
+  panelGroups.forEach(function (panelGroup) {
+    var panels = panelGroup.querySelectorAll('[data-panel]');
+    var panelTriggers = panelGroup.querySelectorAll('[data-panel-trigger]');
+    var panelTargets = panelGroup.querySelectorAll('[data-panel-target]');
+    panels.forEach(function (panel) {
+      var panelTrigger = panel.querySelector('[data-panel-trigger]');
+      var panelTarget = panel.querySelector('[data-panel-target]');
+      var panelLinks = panelTarget.querySelectorAll('a, button');
+      panelTarget.style.height = "";
+      var panelTargetHeight = panelTarget.dataset.height;
+
+      // show/hide clickable panel elements
+      var panelLinksArr = [];
+      var hideLinks = function hideLinks() {
+        if (panelLinks) {
+          panelLinksArr = Array.from(panelLinks);
+          panelLinksArr.forEach(function (link) {
+            link.tabIndex = -1;
+          });
+        }
+      };
+      var showLinks = function showLinks() {
+        if (panelLinks) {
+          panelLinksArr = Array.from(panelLinks);
+          panelLinksArr.forEach(function (link) {
+            link.tabIndex = '';
+          });
+        }
+      };
+      setTimeout(function () {
+        panelTarget.style.height = "0";
+        panelTarget.style.visibility = "";
+      }, 100);
+      hideLinks();
+      panelTrigger.addEventListener("click", function (event) {
+        event.preventDefault();
+        var triggered = panelTrigger.getAttribute('aria-expanded');
+        panelTriggers.forEach(function (trigger) {
+          trigger.setAttribute('aria-expanded', 'false');
+          hideLinks();
+        });
+        panelTargets.forEach(function (target) {
+          target.style.height = "0";
+        });
+        if (triggered === 'false') {
+          panelTrigger.setAttribute('aria-expanded', 'true');
+          panelTarget.style.height = panelTargetHeight + 'px';
+          showLinks();
+        }
+      });
+    });
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (panels);
+
+/***/ }),
+
 /***/ "./src/assets/scss/main.scss":
 /*!***********************************!*\
   !*** ./src/assets/scss/main.scss ***!
   \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
@@ -99,6 +234,18 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 				}
 /******/ 			}
 /******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
 /******/ 		};
 /******/ 	})();
 /******/ 	

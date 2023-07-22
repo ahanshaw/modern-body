@@ -1,7 +1,6 @@
 let mix = require('laravel-mix');
 
 mix
-.js('src/assets/js/**.js', 'web/assets/js')
 .sass('src/assets/scss/main.scss', 'web/assets/css')
     .options({
         autoprefixer: {
@@ -12,6 +11,8 @@ mix
             }
         }
     })
+.js('src/assets/js/main.js', 'web/assets/js/')
+.js('src/assets/js/home.js', 'web/assets/js/')
 .copyDirectory('src/assets/fonts', 'web/assets/fonts')
     .options({
         processCssUrls: false

@@ -1,42 +1,48 @@
 {% extends "_layout" %}
 {% block content %}
 <main class="classes stack-md">
-    {% set Image = entry.classesHeroImage.one() %}
-    {% if Image %}
-    <div class="classes-hero-img">
-        <img src="{{ Image.url() }}" alt="Aly DiRoma">
-    </div>
-    {% endif %}
-
-    <div class="classes-title stack-sm">
+    <div class="classes-head stack-sm">
         <h1>{{ entry.classesTitle }}</h1>
         {% if entry.classesDescription %}
-            <div class="rich-text stack-xs">
-                {{ entry.classesDescription }}
-            </div>
+        <div class="rich-text">
+            {{ entry.classesDescription }}
+        </div>
         {% endif %}
     </div>
 
     {% set blocks = entry.classesList.all() %}
     {% if blocks | length %}
-        <div class="classes-list stack-lg">
-            {% for block in blocks %}
-            <div class="classes-item stack-sm animate">
-                <div class="classes-item-title">
-                        <h2>{{ block.classTitle }}</h2>
-                    </div>
-                    <div class="classes-item-copy">
-                        <div class="classes-item-subtitle">
-                            <p><strong>{{ block.classSubtitle | striptags }}</strong></p>
-                        </div>
-                        <div  class="classes-item-description stack-sm">
-                            {{ block.classDescription }}
-                            <p><a class="btn-sm" href="{{ block.classLink }}">{{ block.classLink.getCustomText('Learn More') }}</a></p>
-                        </div>
-                    </div>
+    <div class="stack-xl">
+        {% for block in blocks %}
+        <div class="classes-item stack-sm animate">
+            <div class="flex-block">
+                <h2 class="classes-item-title">{{ block.classTitle }}</h2>
+            </div>
+            <div class="flex-block">
+                <div class="flex-block-bg classes-item-img animate animate-image">
+                    {% set classImage = block.classImage.one() %}
+                    {% if classImage %}
+                        <img src="{{ classImage.url('block') }}" 
+                        width="{{ classImage.getWidth('block') }}"
+                        height="{{ classImage.getHeight('block') }}"
+                        alt="{{ classImage.alt }}" />
+                    {% endif %}
                 </div>
-            {% endfor %}
+                <div class="classes-item-desc">
+                    <div class="stack-xs">
+                        <p class="large-font"><strong>{{ block.classSubtitle | striptags }}</strong></p>
+                        <p>{{ block.classDescription | striptags }}</p>
+                    </div>
+                    {% if block.classLink %}
+                        <p class="classes-item-link">
+                            <a class="btn btn-wide-mobile" href="{{ block.classLink }}">{{ block.classLink.getCustomText('Learn More') }}</a>
+                        </p>
+                    {% endif %}
+                </div>
+            </div>
         </div>
+        {% endfor %}
+    </div>
     {% endif %}
 </main>
 {% endblock %}

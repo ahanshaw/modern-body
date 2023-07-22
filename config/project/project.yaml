@@ -1,80 +1,141 @@
-dateModified: 1679181643
+dateModified: 1690031913
 email:
   fromEmail: alhmail@gmail.com
   fromName: 'Modern Body'
   transportType: craft\mail\transportadapters\Sendmail
 fs:
-  imageFiles:
+  assets:
     hasUrls: true
-    name: 'Image Files'
+    name: Assets
     settings:
-      path: '@webroot'
-    type: craft\fs\Local
-    url: '@web'
-  videoFiles:
-    hasUrls: true
-    name: 'Video Files'
-    settings:
-      path: '@webroot'
-    type: craft\fs\Local
-    url: '@web'
+      cdnUrlPattern: ''
+      customSubfolder: ''
+      makeUploadsPublic: true
+      optimisePrefix: ''
+      optimiseUrlPattern: ''
+      projectSlug: ''
+      securityKey: ''
+      subfolder: modern-body/local/
+    type: servd\AssetStorage\AssetsPlatform\Fs
+    url: 'https://cdn2.assets-servd.host'
 meta:
   __names__:
     0abc2601-eb4e-47a7-bb20-6358900e5ed0: 'About Image' # About Image
+    0cde0605-f76d-4d81-b240-a89fc8d0966e: Subtitle # Subtitle
     0d0100be-ea79-4a84-b7ba-2a406203ef77: 'Company Image' # Company Image
     0e24ebfd-5210-45ab-8434-b505aa1e3db4: Link # Link
     0e62c248-99e6-42ab-b8cd-d7ec668bc886: 'Hero Image' # Hero Image
+    1ead34db-f5ca-4e93-86d7-d61743978668: Default # Default
     1f1a8a59-4979-401d-82a3-b9b53b9c1de2: Classes # Classes
+    3c9b8501-9904-40a0-aacb-1ed669a96d5f: 'Accordion Copy' # Accordion Copy
+    3dfd732e-0ff1-4997-b0fa-45bd54fb4662: 'Intro to Pilates' # Intro to Pilates
+    4b9411de-fe15-4e34-b54a-3eaa702c336d: 'Intro to Pilates' # Intro to Pilates
+    4d2ffb4a-b740-4fd6-96c8-451c18168856: 'Tik Tok' # Tik Tok
+    5c337995-e31f-4ea4-9ee5-80ee8beda0c9: Global # Global
     5d6e6468-5ba1-4d69-9cc9-61ae8d7dec0c: 'Testimonial Image' # Testimonial Image
     5d9037d9-870f-4c88-93fb-fc01efa9af9d: Subtitle # Subtitle
+    5f0332ac-8ba6-4aab-ab82-e982da9d4551: Posts # Posts
+    5f8469b0-407a-4b00-b0e9-4d7704b09500: title # title
     6bfbcd2b-1df4-4957-93f9-af5634cb74d7: 'Product Link' # Product Link
-    6d8edb5f-1775-4b83-9df0-2c1fb6d97ae7: Videos # Videos
     6dd9aa0b-b4f3-4320-8d34-181a52eb6a00: Home # Home
+    7c815618-2626-41f3-bbec-7e8471481ac9: FAQ # FAQ
     07dede5f-e375-4ca2-9622-0adde621a5c3: Home # Home
+    8a752967-d814-4b19-bdfb-02fe03817648: Title # Title
+    8d08adba-2f82-490b-9eb6-cb31df5a179e: Intro # Intro
     8fcc0341-0be2-48bb-867d-c746a78e9c82: 'Products Items' # Products Items
-    9a08632a-f16d-4a7b-98d7-ded85bf94df6: Images # Images
     9d74e71c-d037-432d-887d-4065ec79a9c7: 'Modern Body' # Modern Body
+    9ddbe15b-bd59-4e81-b887-21754a3754c0: Sidebar # Sidebar
     010f0163-ae73-4856-aa58-73380990ab5b: Description # Description
+    11d2fbd0-367e-4709-b5a0-ab8554cc5c29: 'FAQ Question' # FAQ Question
+    14a6f0f3-b531-4d1d-a2b5-c9b0a56a2ef0: Assets # Assets
     21b6ca88-6ace-44d7-8c0e-fb6ccbab53d8: Bullet # Bullet
+    29c627bb-9663-43ab-95e0-dec6b1e20414: 'Main Nav' # Main Nav
+    29f08e9f-d744-454f-bc1a-64cbddf3f0c8: Contact # Contact
     34d91206-bdc7-4cac-b810-e54fa52a8f98: 'Products Head' # Products Head
     43c4b11f-16f2-4fb5-8984-7701e5e667d0: 'Hero Tagline' # Hero Tagline
+    45cdf667-692c-4321-96aa-54465fc2c000: Instagram # Instagram
     63ee439f-a7aa-41cf-b686-93b2f5f6392d: 'Product Link Text' # Product Link Text
     84d4713f-9e53-4b1c-8d8e-e5600fa07269: Class # Class
     96f6e380-8739-4368-a5b3-042e778befe7: 'Company Head' # Company Head
     196bdac8-d7ed-4635-acc3-e671ce97f550: Common # Common
-    221b0134-0f21-4270-a087-06a4eaf0ded3: About # About
+    221b0134-0f21-4270-a087-06a4eaf0ded3: 'About Aly' # About Aly
+    313c48a2-dfc1-4518-9ba6-7fc0974e9c50: Block # Block
+    414a85ef-26ae-44bc-84ae-b9b99c0c85f8: Intro # Intro
     485c9d29-4e5b-4658-9c86-ed411faf38f6: Title # Title
+    0816ea9d-8582-4bee-aafc-b482935a9c94: 'Footer Nav Column 2' # Footer Nav Column 2
+    831a1862-ae47-4961-b2a4-ddc9c451e096: FAQ # FAQ
     854bb4fe-e607-46c0-8623-93814869aea5: Description # Description
+    949dacbe-f141-438a-9783-ccf2d76f4cc3: Full-Width # Full-Width
+    961c4e37-3a41-4b10-8ec3-6a16adb32128: 'Sidebar Accordion' # Sidebar Accordion
+    4046c835-2452-4000-84ec-20b3d05d8d00: Pricing # Pricing
+    6887f96e-ee16-4b11-9a20-45e7c13aeda4: FAQs # FAQs
+    7365b913-af69-4a61-8213-fcf62513f1b5: Posts # Posts
     9121f0f4-c29a-4085-af84-e633b5d10a1a: Title # Title
+    24552ad8-1522-4671-bd6f-aefad369b0ef: 'About MB' # About MB
     83953fb7-e107-4565-970c-a90f8151ddd5: Classes # Classes
     089201a8-2f54-4061-8689-d946689afe52: 'Bullet Head' # Bullet Head
     476101d0-23c9-47fa-98eb-7d3ec4770862: Credentials # Credentials
+    612978b4-b183-4027-a49c-607cf17f73f3: 'Full-Width Laptop' # Full-Width Laptop
+    3050829a-ace6-4ccb-a141-cfe1f06e97aa: Contact # Contact
+    8915217e-26ce-446f-86ff-c4175cabb0b2: Blog # Blog
+    32622215-2664-4d65-84fb-c1a3d9939bdd: 'About Modern Body' # About Modern Body
+    36244931-f53f-4d86-a541-bd644c03591f: 'Accordion Head' # Accordion Head
     51560042-57cb-418c-8ba2-b86b090eb5b4: Title # Title
+    68962412-698f-411d-a320-ca893137e690: Intro # Intro
+    77517042-ad23-4cb1-a85b-a749aad0e660: Blog # Blog
     92053381-bc29-48a8-b8c9-f691eefa64b5: Title # Title
+    a4731ac5-9e41-4ca2-b1d3-9d5f372ec3bc: '1:1 Training' # 1:1 Training
+    a7317e16-6eeb-4299-a34d-02eabaa60519: Intro # Intro
+    aa2ff4ae-da1b-4ca0-8b78-03ce349ee782: 'FAQ Item' # FAQ Item
+    ac16953e-d476-4c04-a41e-9115e69331e6: Contact # Contact
+    ae634bf8-48e5-4164-8ab4-7ea661caa5a5: Accordion # Accordion
+    b01a73ea-d922-4f2c-99e1-45ed4ba8d02a: Blog # Blog
     b87d114e-c463-4311-adbe-dc8e506e6d2b: Classes # Classes
     b87e3b3f-cace-45aa-9c6d-2378c7874b72: Image # Image
     bc2faaee-59b6-4f7a-a9a5-36f7a19cbb14: 'Products List' # Products List
     be094951-a83c-4f73-90e2-1279b3332b1b: 'Bullet Copy' # Bullet Copy
+    bea3d6c0-82bf-44e2-8922-7fe48dac029b: FAQ # FAQ
+    bf710d01-d9f2-4c16-97d2-6e04c591a6cd: Image # Image
     bfc66a87-43b5-45fb-992a-27586fcff3e4: 'Testimonials Head' # Testimonials Head
     c3cb6ef7-7f2e-4185-84a3-704e84298417: 'Class List' # Class List
     c249f4db-294d-44b8-ba21-a84bc989d17a: Home # Home
+    c817d89d-53c9-4fc0-957d-f3a0de39fb06: 'About Modern Body' # About Modern Body
+    c7647f61-cb31-4cae-a072-d52ef1e89892: Image # Image
+    c45206d2-9d75-4bdb-9a7a-7871d6f93696: 'Logo Image Long' # Logo Image Long
+    c96949ec-f032-4c2f-9645-fc318ee7038f: Summary # Summary
     c422089c-49f0-4d9a-9b30-dca485b14661: 'Hero Video' # Hero Video
     ca38367d-589e-4287-bdc0-29124c535643: 'Company Copy' # Company Copy
+    cb0bc08e-fc13-48d5-94d7-26e840daa2df: 'Logo Image' # Logo Image
+    cc69948b-a124-4c17-a64d-b519bf69f5c6: Content # Content
     cdd37bfc-0c28-4258-91d1-7a6a000c53f6: Bio # Bio
+    cef6c373-ddac-4750-a65b-14ec99b6a138: YouTube # YouTube
+    cefc55e3-defd-4873-a167-004cbf243849: Content # Content
+    cf9ba132-fcad-4b8c-b751-f8f46acea212: 'Sidebar Image' # Sidebar Image
     d7efe282-0770-409c-b80d-98a2d44f3231: 'Testimonials List' # Testimonials List
+    d109eed7-bc66-4edb-8452-ac786ef35013: 'Footer Nav Column 3' # Footer Nav Column 3
     d76015ab-cb69-4d6c-9f18-cc3506db7bd7: 'Testimonial Name' # Testimonial Name
     da4444f1-47dd-462a-84b6-0d72b5c266f6: 'Product Title' # Product Title
     da521950-25a7-4aaa-be24-0f045a90984a: 'Product Description' # Product Description
-    e7ca93f7-a988-4c82-ac6e-51212c511d4f: About # About
+    dc20bdf1-05e5-46dd-a2a8-1e01886722ff: Global # Global
+    e0364518-4df8-4d7e-bbc0-a509ebe03558: '1:1 Training' # 1:1 Training
+    e7ca93f7-a988-4c82-ac6e-51212c511d4f: 'About Aly' # About Aly
+    e21c3150-347c-44cc-9e2e-64f9899bb194: 'Company CTA' # Company CTA
     e81aaea7-81e6-4426-937a-9af062c0cd16: 'Credentials Head' # Credentials Head
     e86c3ea3-5a1e-4917-a91a-cee28bdf3ca3: 'About Copy' # About Copy
     e89c1ecc-9442-423f-ab32-6b3d2de27eac: 'Hero Logo' # Hero Logo
     ebe89201-1375-4202-8c7d-80cd9a140f5d: Testimonial # Testimonial
-    ec6b8c17-c1c6-4f35-ad4c-eb15724fdc38: About # About
+    ec6b8c17-c1c6-4f35-ad4c-eb15724fdc38: 'About Aly' # About Aly
+    ecb84e38-b859-4ef8-aeaa-c1e468b2fd35: 'Newsletter Subscribe Label' # Newsletter Subscribe Label
     edd1d7a7-ee00-446d-af3c-31d47d1609b4: 'Modern Body' # Modern Body
+    ee5c98ed-bfa0-436e-b575-a89a085760b5: 'Second Sidebar Image' # Second Sidebar Image
+    ef70b6a7-9da3-4ffd-b6a3-33407f08a79b: 'Sidebar Head' # Sidebar Head
+    ef78c8c4-5030-4480-8f50-50b231fff44c: 'Second Image' # Second Image
+    f055c382-964c-43a8-a07a-efd54cb890e5: 'Footer Nav Column 1' # Footer Nav Column 1
     f1dbd402-7281-4d1a-a2dc-3753d5a44df9: 'Company Bullets' # Company Bullets
     f4af40b0-3ee1-4b65-bfe3-fcf6e67c3c75: 'About Signature' # About Signature
+    f8eb5410-e3fc-41c3-a94e-d80f41ebad14: 'Full-width Mobile' # Full-width Mobile
     f851a4be-7bd7-4309-b0ef-c6ae24caecf3: 'Testimonial Items' # Testimonial Items
+    fd99ba12-b360-4bbb-8fa1-2d576c0d95f5: 'FAQ Answer' # FAQ Answer
 plugins:
   mix:
     edition: standard
@@ -83,6 +144,11 @@ plugins:
     settings:
       assetPath: /assets
       publicPath: /
+  navigation:
+    edition: standard
+    enabled: true
+    licenseKey: AHXYW4VZ3YUFHQ4EHMY9P8TD
+    schemaVersion: 2.0.7
   redactor:
     edition: standard
     enabled: true
@@ -91,6 +157,36 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  servd-asset-storage:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.0
+    settings:
+      adjustFeedmeLogs: ''
+      assetsEnvironment: ''
+      assetsEnvironmentOverwrite: ''
+      cacheClearMode: full
+      clearCachesOnSave: always
+      disableDynamic: ''
+      disableTransforms: ''
+      fsMaps:
+        __assoc__:
+          -
+            - imageFiles
+            - none
+          -
+            - media
+            - none
+          -
+            - videoFiles
+            - none
+      fsMapsEnabled: ''
+      imageAutoConversion: webp
+      injectCors: ''
+      projectSlug: ''
+      securityKey: ''
+      suppressWarnings: ''
+      useLocalVolumes: false
   typedlinkfield:
     edition: standard
     enabled: true

@@ -1,0 +1,27 @@
+columnSuffix: avdxbksq
+contentColumnType: text
+fieldGroup: 5f0332ac-8ba6-4aab-ab82-e982da9d4551 # Posts
+handle: postSubtitle
+instructions: null
+name: Subtitle
+searchable: false
+settings:
+  availableTransforms: ''
+  availableVolumes: ''
+  columnType: text
+  configSelectionMode: choose
+  defaultTransform: ''
+  manualConfig: ''
+  purifierConfig: null
+  purifyHtml: true
+  redactorConfig: null
+  removeEmptyTags: false
+  removeInlineStyles: false
+  removeNbsp: false
+  showHtmlButtonForNonAdmins: false
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  uiMode: enlarged
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field

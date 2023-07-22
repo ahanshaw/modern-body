@@ -1,0 +1,29 @@
+.rich-text {
+    max-width: $narrow;
+
+    h2 {
+        &+p,
+        &+ul {
+            margin-top: $gap-sm;
+        }
+    }
+
+    h3 {
+        margin-top: $gap-sm;
+
+        &+p,
+        &+ul {
+            margin-top: $gap-xs;
+        }
+    }
+
+    p,
+    ul,
+    li {
+        margin-top: $gap-sm;
+    }
+
+    figure {
+        margin-block: $gap;
+    }
+}

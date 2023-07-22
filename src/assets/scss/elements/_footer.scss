@@ -1,18 +1,171 @@
+$_icon-padding: .35rem;
+$_logo-width: 16.75rem;
+$_logo-width-mobile: 14.75rem;
+$_subscribe-form-width: 18rem;
+
 .footer {
-	display: none;
 	position: relative;
-	padding: $gap-xs 0;
-	border-top: 1px solid $accent;
+	margin-top: $gap-xl;
+	padding: $gap 0;
+	border-top: 2px solid $accent;
 	z-index: 2;
-	
-	&-container {
-		@include container;
+
+	@include break(tablet) {
 		display: flex;
-		justify-content: center;
-		
-		p {
-			@include font-bold;
-			@include toRem('font-size', 10);
+		flex-direction: column;
+		gap: $gap;
+	}
+
+	a {
+		color: $accent;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	&-top {
+		@include container($medium);
+		display: flex;
+		justify-content: space-between;
+		gap: $gap-sm;
+
+		@include break(tablet) {
+			flex-direction: column;
+			gap: $gap;
+		}
+
+		@include break(mobile) {
+			flex-direction: column;
+			gap: $gap;
+		}
+	}
+
+	&-column {
+		flex: 1;
+	}
+
+	&-logo {
+
+		img {
+			display: block;
+			width: 100%;
+			max-width: $_logo-width;
+
+			@include break(mobile) {
+				max-width: $_logo-width-mobile;
+			}
+		}
+	}
+
+	&-nav {
+		display: flex;
+		gap: $gap-lg;
+
+		@include break(mobile) {
+			flex-direction: column;
+			gap: $gap-sm;
+		}
+
+		&-column {
+			display: flex;
+			flex-direction: column;
+			gap: $gap-sm;
+			padding: 0;
+
+			@include break(tablet) {
+				gap: $gap-xs;
+			}
+		}
+
+		&-item {
+			display: inline-block;
+			list-style: none;
+
+			@include break(tablet) {
+				flex: 0 0 calc(33% - #{$gap-sm});
+			}
+
+			@include break(tablet) {
+				flex: 0 0 calc(50% - #{$gap-sm});
+			}
+		}
+
+		&-link {
+
+			&.active {
+				text-decoration: underline;
+
+				&:hover {
+					cursor: default;
+				}
+			}
+		}
+	}
+
+	&-social {
+		display: flex;
+		align-items: center;
+		gap: $gap;
+		padding: 0;
+
+		li {
+			display: inline-block;
+			width: $gap;
+			list-style: none;
+
+			a {
+				display: block;
+				width: $gap;
+				height: $gap;
+				padding: $_icon-padding;
+				background-color: $accent;
+				border-radius: $radius-large;
+				transition: background-color .3s ease;
+
+				&:hover {
+					background-color: $black;
+				}
+			}
+
+			svg {
+				display: block;
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+				object-position: center;
+				fill: $white;
+				transition: fill .3s ease;
+			}
+		}
+	}
+
+	&-bottom {
+		@include container($medium);
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		gap: $gap-sm;
+
+		@include break(tablet) {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: $gap;
+		}
+	}
+
+	&-subscribe {
+		@include break(mobile) {
+			width: 100%;
+		}
+
+		input[type="text"] {
+			width: $_subscribe-form-width;
+
+			@include break(mobile) {
+				width: 100%;
+			}
 		}
 	}
 }
